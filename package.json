@@ -1,0 +1,48 @@
+{
+  "name": "@isonia/theme-default",
+  "version": "0.1.0",
+  "description": "Default CSS variable theme package for IsoniaOS app-core",
+  "license": "MIT",
+  "type": "module",
+  "style": "./src/theme.css",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "src/theme.css",
+    "src/assets"
+  ],
+  "sideEffects": [
+    "./src/theme.css"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./tokens": {
+      "types": "./dist/tokens.d.ts",
+      "import": "./dist/tokens.js",
+      "default": "./dist/tokens.js"
+    },
+    "./brand": {
+      "types": "./dist/brand.d.ts",
+      "import": "./dist/brand.js",
+      "default": "./dist/brand.js"
+    },
+    "./theme.css": "./src/theme.css",
+    "./assets/isonia-logo.svg": "./src/assets/isonia-logo.svg"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "prepare": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "5.7.3"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
