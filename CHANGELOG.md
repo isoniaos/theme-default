@@ -6,8 +6,13 @@ All notable changes to `@isonia/theme-default` are documented here.
 
 ## [Unreleased]
 
+### Added
+
+- Added v0.6 address component theme preparation notes.
+
 ### Changed
 
+- Prepared repository context for v0.6 alpha work after the closed v0.5 compatibility set.
 - Updated README dependency guidance to use the v0.5 Developer Preview tag.
 
 ## [0.5.0-alpha.2]
