@@ -24,12 +24,12 @@ For local workspace development, app-core can depend on the adjacent package:
 }
 ```
 
-For deployable builds, use a pinned GitHub tag or immutable commit SHA once this package is published as a public repository:
+For deployable builds, use a pinned GitHub tag or immutable commit SHA:
 
 ```json
 {
   "dependencies": {
-    "@isonia/theme-default": "github:isoniaos/theme-default#v0.1.0"
+    "@isonia/theme-default": "github:isoniaos/theme-default#v0.5.0-alpha.2"
   }
 }
 ```

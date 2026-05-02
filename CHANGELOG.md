@@ -6,9 +6,9 @@ All notable changes to `@isonia/theme-default` are documented here.
 
 ## [Unreleased]
 
-### Added
+### Changed
 
-- Added this changelog for release tracking and future release notes.
+- Updated README dependency guidance to use the v0.5 Developer Preview tag.
 
 ## [0.5.0-alpha.2]
 
