@@ -8,6 +8,8 @@ All notable changes to `@isonia/theme-default` are documented here.
 
 ### Added
 
+- Added v0.6 address component state classes, accent aliases, address sizing
+  variables, mono typography preference, and typed address component metadata.
 - Added v0.6 address component theme preparation notes.
 
 ### Changed

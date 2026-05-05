@@ -9,6 +9,8 @@ export interface ThemeTokens {
     readonly primary: string;
     readonly primaryStrong: string;
     readonly primaryForeground: string;
+    readonly accent: string;
+    readonly accentSurface: string;
     readonly danger: string;
     readonly dangerSurface: string;
     readonly warning: string;
@@ -56,6 +58,11 @@ export interface ThemeComponentVariants {
   readonly badge: {
     readonly radius: keyof ThemeTokens["radius"];
   };
+  readonly address?: {
+    readonly avatarSize: string;
+    readonly avatarRadius: string;
+    readonly letterSpacing: string;
+  };
 }
 
 export interface ThemeLayoutConfig {
@@ -87,6 +94,8 @@ export const defaultThemeTokens = {
     primary: "#126a73",
     primaryStrong: "#0d525a",
     primaryForeground: "#ffffff",
+    accent: "#126a73",
+    accentSurface: "#dcebef",
     danger: "#a23a48",
     dangerSurface: "#f5dde1",
     warning: "#9a6418",
@@ -114,7 +123,7 @@ export const defaultThemeTokens = {
     headingFontFamily:
       "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif",
     monoFontFamily:
-      "ui-monospace, SFMono-Regular, Consolas, Liberation Mono, monospace",
+      "IBM Plex Mono, ui-monospace, SFMono-Regular, Consolas, Liberation Mono, monospace",
   },
 } as const satisfies ThemeTokens;
 
@@ -128,6 +137,8 @@ export const defaultThemeCssVariables = {
   "--iso-color-primary": defaultThemeTokens.colors.primary,
   "--iso-color-primary-strong": defaultThemeTokens.colors.primaryStrong,
   "--iso-color-primary-foreground": defaultThemeTokens.colors.primaryForeground,
+  "--iso-color-accent": defaultThemeTokens.colors.accent,
+  "--iso-color-accent-surface": defaultThemeTokens.colors.accentSurface,
   "--iso-color-danger": defaultThemeTokens.colors.danger,
   "--iso-color-danger-surface": defaultThemeTokens.colors.dangerSurface,
   "--iso-color-warning": defaultThemeTokens.colors.warning,
@@ -147,6 +158,9 @@ export const defaultThemeCssVariables = {
   "--iso-font-sans": defaultThemeTokens.typography.fontFamily,
   "--iso-font-heading": defaultThemeTokens.typography.headingFontFamily,
   "--iso-font-mono": defaultThemeTokens.typography.monoFontFamily,
+  "--iso-address-avatar-size": "22px",
+  "--iso-address-avatar-radius": "2px",
+  "--iso-address-letter-spacing": "0.004em",
 } as const satisfies ThemeCssVariables;
 
 export const defaultThemeComponents = {
@@ -159,6 +173,11 @@ export const defaultThemeComponents = {
   },
   badge: {
     radius: "sm",
+  },
+  address: {
+    avatarRadius: "2px",
+    avatarSize: "22px",
+    letterSpacing: "0.004em",
   },
 } as const satisfies ThemeComponentVariants;
 
