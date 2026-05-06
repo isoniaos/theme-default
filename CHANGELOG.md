@@ -6,6 +6,8 @@ All notable changes to `@isonia/theme-default` are documented here.
 
 ## [Unreleased]
 
+## [0.6.0-alpha.2]
+
 ### Added
 
 - Added v0.6 address component state classes, accent aliases, address sizing
@@ -33,5 +35,6 @@ All notable changes to `@isonia/theme-default` are documented here.
 - Placeholder logo asset export for App Core.
 
 [Unreleased]: https://github.com/isoniaos/theme-default/compare/v0.5.0-alpha.2...HEAD
+[0.6.0-alpha.2]: https://github.com/isoniaos/theme-default/releases/tag/v0.6.0-alpha.2
 [0.5.0-alpha.2]: https://github.com/isoniaos/theme-default/releases/tag/v0.5.0-alpha.2
 [0.1.0]: https://github.com/isoniaos/theme-default/releases/tag/v0.1.0
