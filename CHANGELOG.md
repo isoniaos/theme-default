@@ -14,6 +14,7 @@ All notable changes to `@isonia/theme-default` are documented here.
 
 ### Changed
 
+- Updated the package Node engine baseline to `>=22` and added repository line-ending policy for v0.6 hardening.
 - Prepared repository context for v0.6 alpha work after the closed v0.5 compatibility set.
 - Updated README dependency guidance to use the v0.5 Developer Preview tag.
 
