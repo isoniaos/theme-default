@@ -6,6 +6,10 @@ All notable changes to `@isonia/theme-default` are documented here.
 
 ## [Unreleased]
 
+### Added
+
+- Added exported IsoniaOS light/dark logo assets and brand metadata.
+
 ## [0.6.0-alpha.2]
 
 ### Added

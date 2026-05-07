@@ -17,7 +17,13 @@ export const defaultTheme = {
   layout: defaultThemeLayout,
 } as const satisfies IsoniaThemeModule;
 
-export { ISONIA_DEFAULT_LOGO_PATH, defaultThemeBrand } from "./brand.js";
+export {
+  ISONIA_DEFAULT_LOGO_PATH,
+  ISONIA_LEGACY_LOGO_PATH,
+  ISONIA_LOGO_DARK_PATH,
+  ISONIA_LOGO_PATH,
+  defaultThemeBrand,
+} from "./brand.js";
 export {
   defaultThemeComponents,
   defaultThemeCssVariables,

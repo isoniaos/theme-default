@@ -43,6 +43,7 @@ export interface ThemeBrand {
   readonly productName: string;
   readonly companyName?: string;
   readonly logo?: string;
+  readonly logoDark?: string;
   readonly mark?: string;
   readonly favicon?: string;
 }

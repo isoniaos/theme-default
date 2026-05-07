@@ -9,7 +9,8 @@ This package provides CSS variables, design tokens, brand metadata, and static a
 - `src/theme.css` defines the default `--iso-*` CSS variables.
 - `src/tokens.ts` exports typed design tokens and CSS variable values.
 - `src/brand.ts` exports IsoniaOS brand metadata.
-- `src/assets/isonia-logo.svg` is a placeholder logo asset.
+- `src/assets/logo.svg` and `src/assets/logo-dark.svg` provide the light and dark IsoniaOS logo assets.
+- `src/assets/isonia-logo.svg` remains exported for existing consumers.
 - `src/index.ts` exports the default theme module.
 
 ## Install During Early Development
@@ -55,13 +56,14 @@ for (const [name, value] of Object.entries(defaultTheme.cssVariables)) {
 }
 ```
 
-With Vite, import the placeholder logo as an asset URL when rendering an image:
+With Vite, import the logo assets as URLs when rendering images:
 
 ```ts
-import logoUrl from "@isonia/theme-default/assets/isonia-logo.svg?url";
+import logoUrl from "@isonia/theme-default/assets/logo.svg?url";
+import logoDarkUrl from "@isonia/theme-default/assets/logo-dark.svg?url";
 ```
 
-The exported brand metadata also includes the package-relative logo path for non-bundled consumers.
+The exported brand metadata also includes package-relative `logo` and `logoDark` paths for non-bundled consumers.
 
 ## Scripts
 
