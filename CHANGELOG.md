@@ -6,6 +6,8 @@ All notable changes to `@isonia/theme-default` are documented here.
 
 ## [Unreleased]
 
+## [0.6.0-alpha.3]
+
 ### Added
 
 - Added exported IsoniaOS light/dark logo assets and brand metadata.
@@ -38,7 +40,8 @@ All notable changes to `@isonia/theme-default` are documented here.
 - Typed theme token and brand metadata exports.
 - Placeholder logo asset export for App Core.
 
-[Unreleased]: https://github.com/isoniaos/theme-default/compare/v0.5.0-alpha.2...HEAD
+[Unreleased]: https://github.com/isoniaos/theme-default/compare/v0.6.0-alpha.3...HEAD
+[0.6.0-alpha.3]: https://github.com/isoniaos/theme-default/releases/tag/v0.6.0-alpha.3
 [0.6.0-alpha.2]: https://github.com/isoniaos/theme-default/releases/tag/v0.6.0-alpha.2
 [0.5.0-alpha.2]: https://github.com/isoniaos/theme-default/releases/tag/v0.5.0-alpha.2
 [0.1.0]: https://github.com/isoniaos/theme-default/releases/tag/v0.1.0
