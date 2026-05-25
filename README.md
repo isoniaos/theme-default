@@ -1,21 +1,18 @@
 # @isonia/theme-default
 
-Default public theme package for IsoniaOS.
+`@isonia/theme-default` owns the default public theme package for IsoniaOS. It provides CSS variables, typed design tokens, brand metadata, and logo assets consumed by App Core and other frontends.
 
-This package provides CSS variables, design tokens, brand metadata, and static assets for app-core. It is not a React app and has no runtime dependencies.
+The public repository map describes where this package fits in the wider system: [site/developers/repository-map.md](https://github.com/isoniaos/docs/blob/main/site/developers/repository-map.md).
 
-## Scope
+## Installation
 
-- `src/theme.css` defines the default `--iso-*` CSS variables.
-- `src/tokens.ts` exports typed design tokens and CSS variable values.
-- `src/brand.ts` exports IsoniaOS brand metadata.
-- `src/assets/logo.svg` and `src/assets/logo-dark.svg` provide the light and dark IsoniaOS logo assets.
-- `src/assets/isonia-logo.svg` remains exported for existing consumers.
-- `src/index.ts` exports the default theme module.
+Requires Node.js 22 or newer and pnpm through Corepack.
 
-## Install During Early Development
+```bash
+corepack pnpm install
+```
 
-For local workspace development, app-core can depend on the adjacent package:
+For local workspace development, App Core can link the adjacent package:
 
 ```json
 {
@@ -25,50 +22,66 @@ For local workspace development, app-core can depend on the adjacent package:
 }
 ```
 
-For deployable builds, use a pinned GitHub tag or immutable commit SHA:
+For application or deployment code outside the workspace, depend on a released package, pinned Git tag, or immutable commit SHA rather than a floating branch.
 
-```json
-{
-  "dependencies": {
-    "@isonia/theme-default": "github:isoniaos/theme-default#v0.5.0-alpha.2"
-  }
-}
+## Configuration
+
+This package has no runtime environment variables.
+
+Theme source files:
+
+- `src/theme.css` exports default `--iso-*` CSS variables.
+- `src/tokens.ts` exports typed token values.
+- `src/brand.ts` exports brand metadata and asset paths.
+- `src/assets/logo.svg`, `src/assets/logo-dark.svg`, and `src/assets/isonia-logo.svg` are exported package assets.
+- `src/index.ts` exports the default theme module.
+
+Package exports and CSS side effects are declared in [`package.json`](package.json).
+
+## Run / Usage
+
+Build:
+
+```bash
+corepack pnpm build
 ```
 
-Do not depend on a floating branch for application or deployment code.
+Typecheck without emitting output:
 
-## App Core Usage
+```bash
+corepack pnpm typecheck
+```
 
-Import the CSS variables once during app bootstrap, before app-core global styles:
+Import the CSS variables once during app bootstrap:
 
 ```ts
 import "@isonia/theme-default/theme.css";
-import "./styles/global.css";
 ```
 
-Import the typed theme module where app-core needs tokens or brand metadata:
+Import typed theme metadata where needed:
 
 ```ts
 import { defaultTheme } from "@isonia/theme-default";
-
-for (const [name, value] of Object.entries(defaultTheme.cssVariables)) {
-  document.documentElement.style.setProperty(name, value);
-}
 ```
 
-With Vite, import the logo assets as URLs when rendering images:
+Import logo assets through bundler URL handling when rendering images:
 
 ```ts
 import logoUrl from "@isonia/theme-default/assets/logo.svg?url";
-import logoDarkUrl from "@isonia/theme-default/assets/logo-dark.svg?url";
 ```
 
-The exported brand metadata also includes package-relative `logo` and `logoDark` paths for non-bundled consumers.
+## Troubleshooting
 
-## Scripts
+- If consumers cannot resolve CSS, confirm the package export is `@isonia/theme-default/theme.css`.
+- If declarations are stale, run `corepack pnpm build`.
+- If App Core needs new stable theme variables, add typed tokens in `src/tokens.ts`, mirror CSS variables in `src/theme.css`, and document the local contract in `docs/`.
 
-```txt
-pnpm install
-pnpm typecheck
-pnpm build
-```
+## Contribution
+
+Read [`AGENTS.md`](AGENTS.md) before editing. Keep this package focused on theme tokens, CSS variables, brand metadata, and assets. Do not add governance logic, wallet logic, provider integrations, Control Plane behavior, SDK clients, SaaS behavior, or authority decisions.
+
+Update local docs and the public docs repository when theme package behavior affects users, developers, operators, or public claims.
+
+## License
+
+MIT. See [`LICENSE`](LICENSE).

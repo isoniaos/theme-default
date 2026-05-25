@@ -1,52 +1,66 @@
-# IsoniaOS Theme Default Agent Rules
+# IsoniaOS Theme Default Agent Instructions
 
-These rules apply to Codex and other AI agents working in `theme-default`.
+## Scope
 
-When this repository is used inside the IsoniaOS workspace, read the workspace-level `../AGENTS.md` first, then return to this file for repository-specific instructions.
+This repository owns the default public theme package for IsoniaOS: CSS variables, typed design tokens, brand metadata, and package assets.
 
-## Repository Purpose
+It does not own governance logic, protocol authority, Control Plane behavior, SDK clients, wallet flows, provider integrations, App Core feature logic, SaaS behavior, or integration-lab fixtures.
 
-`theme-default` is the public default theme package for IsoniaOS.
+## Workspace Instruction Chain
 
-It may provide:
+When working inside the private IsoniaOS workspace, read:
 
-- design tokens;
-- brand primitives;
-- assets;
-- component variants;
-- layout defaults;
-- theme documentation.
+1. `../AGENTS.md`
+2. `../CURRENT_ROADMAP.md`
+3. relevant `../private-docs/` index, governance, roadmap, and migration docs
+4. this repository `AGENTS.md`
+5. this repository `/docs` and `README.md`
+6. current source/config files before editing
 
-## Boundaries
+If this repository is cloned standalone, use this file as the local agent entry point and avoid relying on private workspace-only paths.
 
-Do not add:
+## Stack and Commands
 
-- governance or protocol logic;
-- Control Plane behavior;
-- SDK client behavior;
-- wallet logic;
-- provider integrations;
-- demo-stack launcher behavior;
-- integration-lab fixtures;
-- SaaS-only features;
-- business rules or authority decisions.
+- TypeScript package source under `src/`
+- CSS variables in `src/theme.css`
+- Typed tokens in `src/tokens.ts`
+- Brand metadata in `src/brand.ts`
+- Assets in `src/assets/`
 
-Theme code must not become a source of governance authority.
+Useful commands:
 
-## Versioning and Claims
+```bash
+corepack pnpm install
+corepack pnpm build
+corepack pnpm typecheck
+git diff --check
+```
 
-- Keep package versions as SemVer without a leading `v`.
-- Do not create Git tags automatically.
-- Update `CHANGELOG.md` under `Unreleased` for user-visible theme changes.
-- Do not introduce production, audit, public beta, SaaS, legal, provider-completeness, or ISO launch-readiness claims.
+No repository-local lint or test script is currently declared.
 
-## Verification
+## Development Principles
 
-For theme behavior changes, run the strongest relevant subset:
+- Keep this package focused on reusable theme primitives and assets.
+- Add stable token names in `src/tokens.ts` before consumers rely on them.
+- Mirror public token contracts as CSS variables in `src/theme.css`.
+- Keep concrete App Core feature styling in App Core until a reusable theme contract is clear.
+- Do not introduce governance, protocol, wallet, provider, SaaS, Control Plane, or SDK behavior.
+- Do not make production, audit, public beta, legal, SaaS, provider-completeness, grant, ISO launch, or token launch readiness claims.
 
-- `corepack pnpm lint`
-- `corepack pnpm test`
-- `corepack pnpm build`
-- `git diff --check`
+## Documentation Rules
 
-For AGENTS-only changes, `git diff --check` is sufficient.
+Update [`README.md`](README.md), local [`docs/`](docs/), and `CHANGELOG.md` under `Unreleased` when package exports, token names, CSS variables, assets, or brand metadata change.
+
+Update the public docs repository when theme behavior affects public developers, operators, users, or public claims.
+
+## Testing and Validation
+
+For theme package changes, run:
+
+```bash
+corepack pnpm typecheck
+corepack pnpm build
+git diff --check
+```
+
+For documentation-only changes, `git diff --check` is normally sufficient.
