@@ -6,6 +6,17 @@ All notable changes to `@isonia/theme-default` are documented here.
 
 ## [Unreleased]
 
+### Added
+
+- Added typed light/dark color-mode tokens, shell surface slots, shadows, layout variables, and mirrored CSS variables for the default theme contract.
+- Added a dependency-light `@isonia/theme-default/chakra` adapter export for Chakra-compatible token configuration.
+- Added local documentation for the stable theme contract and package exports.
+
+### Changed
+
+- Aligned default CSS variables with the current App Core theme values while keeping feature-specific behavior out of the package.
+- Updated local workspace guidance to prefer private root pnpm workspace resolution over ad hoc package links.
+
 ## [0.6.0-alpha.3]
 
 ### Added

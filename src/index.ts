@@ -1,5 +1,6 @@
 import { defaultThemeBrand } from "./brand.js";
 import {
+  defaultThemeColorModes,
   defaultThemeComponents,
   defaultThemeCssVariables,
   defaultThemeLayout,
@@ -13,6 +14,7 @@ export const defaultTheme = {
   tokens: defaultThemeTokens,
   brand: defaultThemeBrand,
   cssVariables: defaultThemeCssVariables,
+  colorModes: defaultThemeColorModes,
   components: defaultThemeComponents,
   layout: defaultThemeLayout,
 } as const satisfies IsoniaThemeModule;
@@ -25,16 +27,36 @@ export {
   defaultThemeBrand,
 } from "./brand.js";
 export {
+  createThemeCssVariables,
+  defaultThemeAddress,
+  defaultThemeColorModes,
   defaultThemeComponents,
   defaultThemeCssVariables,
+  defaultThemeDarkColors,
+  defaultThemeDarkShadows,
   defaultThemeLayout,
+  defaultThemeLightColors,
+  defaultThemeLightShadows,
+  defaultThemeRadius,
+  defaultThemeSpacing,
   defaultThemeTokens,
+  defaultThemeTypography,
 } from "./tokens.js";
 export type {
+  CreateThemeCssVariablesInput,
   IsoniaThemeModule,
+  ThemeAddressComponentTokens,
   ThemeBrand,
+  ThemeColorModeMap,
+  ThemeColorModeName,
+  ThemeColorModeTheme,
+  ThemeColorTokens,
   ThemeComponentVariants,
   ThemeCssVariables,
   ThemeLayoutConfig,
+  ThemeRadiusTokens,
+  ThemeShadowTokens,
+  ThemeSpacingTokens,
   ThemeTokens,
+  ThemeTypographyTokens,
 } from "./tokens.js";

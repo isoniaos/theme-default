@@ -24,6 +24,7 @@ If this repository is cloned standalone, use this file as the local agent entry 
 - TypeScript package source under `src/`
 - CSS variables in `src/theme.css`
 - Typed tokens in `src/tokens.ts`
+- Optional Chakra-compatible adapter in `src/chakra.ts`
 - Brand metadata in `src/brand.ts`
 - Assets in `src/assets/`
 
@@ -31,10 +32,12 @@ Useful commands:
 
 ```bash
 corepack pnpm install
-corepack pnpm build
 corepack pnpm typecheck
+corepack pnpm build
 git diff --check
 ```
+
+Inside the private workspace, prefer running package checks from the workspace root with `corepack pnpm --filter @isonia/theme-default ...` so sibling `workspace:*` consumers resolve the current local package contract.
 
 No repository-local lint or test script is currently declared.
 
@@ -43,6 +46,7 @@ No repository-local lint or test script is currently declared.
 - Keep this package focused on reusable theme primitives and assets.
 - Add stable token names in `src/tokens.ts` before consumers rely on them.
 - Mirror public token contracts as CSS variables in `src/theme.css`.
+- Keep the Chakra adapter dependency-light. It should expose plain config data and must not import App Core.
 - Keep concrete App Core feature styling in App Core until a reusable theme contract is clear.
 - Do not introduce governance, protocol, wallet, provider, SaaS, Control Plane, or SDK behavior.
 - Do not make production, audit, public beta, legal, SaaS, provider-completeness, grant, ISO launch, or token launch readiness claims.

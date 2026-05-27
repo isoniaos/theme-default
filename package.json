@@ -1,7 +1,7 @@
 {
   "name": "@isonia/theme-default",
   "version": "0.6.0-alpha.3",
-  "description": "Default CSS variable theme package for IsoniaOS app-core",
+  "description": "Default replaceable theme package for IsoniaOS frontends",
   "license": "MIT",
   "type": "module",
   "style": "./src/theme.css",
@@ -30,6 +30,11 @@
       "types": "./dist/brand.d.ts",
       "import": "./dist/brand.js",
       "default": "./dist/brand.js"
+    },
+    "./chakra": {
+      "types": "./dist/chakra.d.ts",
+      "import": "./dist/chakra.js",
+      "default": "./dist/chakra.js"
     },
     "./theme.css": "./src/theme.css",
     "./assets/logo.svg": "./src/assets/logo.svg",

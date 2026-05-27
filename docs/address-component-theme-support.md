@@ -6,6 +6,7 @@ This note records the current theme support for address-related App Core compone
 
 - `src/theme.css` defines exported CSS variables with the `--iso-*` prefix.
 - `src/tokens.ts` defines typed color, radius, spacing, typography, component, and layout tokens.
+- `src/tokens.ts` exposes typed address component tokens under `defaultThemeAddress` and `defaultThemeComponents.address`.
 - `src/index.ts` exports the default theme module.
 
 ## State Coverage
@@ -25,6 +26,7 @@ The default theme exposes:
 - `--iso-address-avatar-size`
 - `--iso-address-avatar-radius`
 - `--iso-address-letter-spacing`
+- `--iso-address-size`
 - `.iso-state-neutral`
 - `.iso-state-success`
 - `.iso-state-warning`
@@ -36,4 +38,4 @@ The default theme exposes:
 - Add future typed token names in `src/tokens.ts` before consumers rely on them.
 - Mirror future public token names as CSS variables in `src/theme.css`.
 - Extend component variant metadata only when App Core needs a stable theme contract beyond the existing address defaults.
-- Keep concrete address component CSS in App Core until the reusable public theme contract is clear.
+- Keep concrete address component layout CSS in App Core until the reusable public theme contract is clear.
