@@ -16,6 +16,7 @@ All notable changes to `@isonia/theme-default` are documented here.
 
 - Aligned default CSS variables with the current App Core theme values while keeping feature-specific behavior out of the package.
 - Updated local workspace guidance to prefer private root pnpm workspace resolution over ad hoc package links.
+- Updated the README public docs link to the current single developer overview.
 
 ## [0.6.0-alpha.3]
 

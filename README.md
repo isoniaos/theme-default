@@ -2,7 +2,7 @@
 
 `@isonia/theme-default` owns the default public theme package for IsoniaOS. It provides CSS variables, typed design tokens, brand metadata, and logo assets consumed by App Core and other frontends.
 
-The public repository map describes where this package fits in the wider system: [site/developers/repository-map.md](https://github.com/isoniaos/docs/blob/main/site/developers/repository-map.md).
+The public developer overview describes where this package fits in the wider system: [site/developers/index.md](https://github.com/isoniaos/docs/blob/main/site/developers/index.md).
 
 ## Installation
 
