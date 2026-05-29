@@ -31,6 +31,16 @@ export interface IsoniaChakraThemeConfig {
         heading: IsoniaChakraTokenValue;
         mono: IsoniaChakraTokenValue;
       };
+      fontWeights: {
+        bold: IsoniaChakraTokenValue;
+        normal: IsoniaChakraTokenValue;
+      };
+      letterSpacings: {
+        body: IsoniaChakraTokenValue;
+      };
+      lineHeights: {
+        body: IsoniaChakraTokenValue;
+      };
       radii: Record<`iso${Capitalize<keyof ThemeRadiusTokens>}`, IsoniaChakraTokenValue>;
       shadows: Record<
         `iso${Capitalize<keyof ThemeShadowTokens>}`,
@@ -60,6 +70,11 @@ export function createIsoniaChakraThemeConfig({
           isonia: createColorTokenReferences(theme.tokens.colors),
         },
         fonts: createFontTokenReferences(theme.tokens.typography),
+        fontWeights: createFontWeightTokenReferences(theme.tokens.typography),
+        letterSpacings: createLetterSpacingTokenReferences(
+          theme.tokens.typography,
+        ),
+        lineHeights: createLineHeightTokenReferences(theme.tokens.typography),
         radii: createRadiusTokenReferences(theme.tokens.radius),
         shadows: createShadowTokenReferences(theme.tokens.shadows),
         sizes: createLayoutTokenReferences(theme.layout),
@@ -116,6 +131,31 @@ function createFontTokenReferences(
     condensed: token("var(--iso-font-condensed)"),
     heading: token("var(--iso-font-heading)"),
     mono: token("var(--iso-font-mono)"),
+  };
+}
+
+function createFontWeightTokenReferences(
+  _typography: ThemeTypographyTokens,
+): IsoniaChakraThemeConfig["theme"]["tokens"]["fontWeights"] {
+  return {
+    bold: token("var(--iso-font-weight-bold)"),
+    normal: token("var(--iso-font-weight-normal)"),
+  };
+}
+
+function createLetterSpacingTokenReferences(
+  _typography: ThemeTypographyTokens,
+): IsoniaChakraThemeConfig["theme"]["tokens"]["letterSpacings"] {
+  return {
+    body: token("var(--iso-font-letter-spacing)"),
+  };
+}
+
+function createLineHeightTokenReferences(
+  _typography: ThemeTypographyTokens,
+): IsoniaChakraThemeConfig["theme"]["tokens"]["lineHeights"] {
+  return {
+    body: token("var(--iso-font-line-height)"),
   };
 }
 

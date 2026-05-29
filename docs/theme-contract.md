@@ -45,7 +45,11 @@ Typography tokens:
 - `fontFamily`;
 - `headingFontFamily`;
 - `condensedFontFamily`;
-- `monoFontFamily`.
+- `monoFontFamily`;
+- `fontWeightNormal`;
+- `fontWeightBold`;
+- `lineHeight`;
+- `letterSpacing`.
 
 Layout tokens:
 
@@ -74,10 +78,12 @@ Public CSS variables mirror the typed token contract:
 - colors use `--iso-color-*`;
 - radii use `--iso-radius-*`;
 - spacing uses `--iso-space-*`;
-- typography uses `--iso-font-*`;
+- typography uses `--iso-font-*`, including `--iso-font-weight-normal`, `--iso-font-weight-bold`, `--iso-font-line-height`, and `--iso-font-letter-spacing`;
 - layout uses `--iso-layout-*`;
 - shadows use `--iso-shadow-*`;
 - address component variables use `--iso-address-*`.
+
+The default CSS imports Roboto for body, heading, and condensed slots and SUSE Mono for monospace slots. It loads normal and italic faces at weights 400 and 600, and applies the base font family, normal weight, line height, and letter spacing on `body`.
 
 The theme CSS also provides `.iso-state-neutral`, `.iso-state-success`, `.iso-state-warning`, `.iso-state-danger`, and `.iso-state-accent` classes that assign `--iso-state-color`, `--iso-state-border`, and `--iso-state-surface`.
 
@@ -95,4 +101,4 @@ const system = createSystem(
 );
 ```
 
-The adapter maps Chakra token values to CSS variable references so color-mode changes continue to flow through `theme.css` and the typed theme module.
+The adapter maps Chakra token values to CSS variable references so color-mode and typography changes continue to flow through `theme.css` and the typed theme module. It includes font family, font weight, line-height, and letter-spacing token references.

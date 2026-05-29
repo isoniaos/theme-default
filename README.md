@@ -1,6 +1,6 @@
 # @isonia/theme-default
 
-`@isonia/theme-default` owns the default public theme package for IsoniaOS. It provides CSS variables, typed design tokens, brand metadata, and logo assets consumed by App Core and other frontends.
+`@isonia/theme-default` owns the default public theme package for IsoniaOS. It provides CSS variables, typed design tokens, Roboto/SUSE Mono typography defaults, brand metadata, and logo assets consumed by App Core and other frontends.
 
 The public developer overview describes where this package fits in the wider system: [site/developers/index.md](https://github.com/isoniaos/docs/blob/main/site/developers/index.md).
 
@@ -28,8 +28,8 @@ This package has no runtime environment variables.
 
 Theme source files:
 
-- `src/theme.css` exports default `--iso-*` CSS variables.
-- `src/tokens.ts` exports typed light/dark color-mode tokens, CSS variable maps, typography, shadows, layout slots, address component tokens, and helper types.
+- `src/theme.css` imports Roboto and SUSE Mono, exports default `--iso-*` CSS variables, and sets the base body typography.
+- `src/tokens.ts` exports typed light/dark color-mode tokens, CSS variable maps, typography family/weight/line-height/letter-spacing tokens, shadows, layout slots, address component tokens, and helper types.
 - `src/brand.ts` exports brand metadata and asset paths.
 - `src/chakra.ts` exports a dependency-light Chakra-compatible config adapter.
 - `src/assets/logo.svg`, `src/assets/logo-dark.svg`, and `src/assets/isonia-logo.svg` are exported package assets.

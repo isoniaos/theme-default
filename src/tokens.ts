@@ -50,6 +50,10 @@ export interface ThemeTypographyTokens {
   readonly headingFontFamily?: string;
   readonly condensedFontFamily?: string;
   readonly monoFontFamily: string;
+  readonly fontWeightNormal: string;
+  readonly fontWeightBold: string;
+  readonly lineHeight: string;
+  readonly letterSpacing: string;
 }
 
 export interface ThemeShadowTokens {
@@ -233,13 +237,17 @@ export const defaultThemeSpacing = {
 
 export const defaultThemeTypography = {
   condensedFontFamily:
-    '"IBM Plex Sans Condensed", "Arial Narrow", "Segoe UI", sans-serif',
+    '"Roboto", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
   fontFamily:
-    '"IBM Plex Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
+    '"Roboto", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
   headingFontFamily:
-    '"IBM Plex Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
+    '"Roboto", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
   monoFontFamily:
-    '"IBM Plex Mono", "SFMono-Regular", Consolas, "Liberation Mono", monospace',
+    '"SUSE Mono", "SFMono-Regular", Consolas, "Liberation Mono", monospace',
+  fontWeightNormal: "400",
+  fontWeightBold: "600",
+  lineHeight: "1.2",
+  letterSpacing: "0.01rem",
 } as const satisfies ThemeTypographyTokens;
 
 export const defaultThemeLightShadows = {
@@ -267,7 +275,7 @@ export const defaultThemeLayout = {
 export const defaultThemeAddress = {
   avatarRadius: "2px",
   avatarSize: "22px",
-  letterSpacing: "0.004em",
+  letterSpacing: defaultThemeTypography.letterSpacing,
 } as const satisfies ThemeAddressComponentTokens;
 
 export const defaultThemeTokens = {
@@ -378,6 +386,10 @@ export function createThemeCssVariables({
     variables["--iso-font-heading"] =
       typography.headingFontFamily ?? typography.fontFamily;
     variables["--iso-font-mono"] = typography.monoFontFamily;
+    variables["--iso-font-weight-normal"] = typography.fontWeightNormal;
+    variables["--iso-font-weight-bold"] = typography.fontWeightBold;
+    variables["--iso-font-line-height"] = typography.lineHeight;
+    variables["--iso-font-letter-spacing"] = typography.letterSpacing;
 
     if (typography.condensedFontFamily) {
       variables["--iso-font-condensed"] = typography.condensedFontFamily;

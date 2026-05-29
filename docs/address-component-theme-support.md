@@ -25,7 +25,7 @@ The default theme exposes:
 - `--iso-color-accent-surface`
 - `--iso-address-avatar-size`
 - `--iso-address-avatar-radius`
-- `--iso-address-letter-spacing`
+- `--iso-address-letter-spacing`, which defaults to `--iso-font-letter-spacing`
 - `--iso-address-size`
 - `.iso-state-neutral`
 - `.iso-state-success`

@@ -11,10 +11,12 @@ All notable changes to `@isonia/theme-default` are documented here.
 - Added typed light/dark color-mode tokens, shell surface slots, shadows, layout variables, and mirrored CSS variables for the default theme contract.
 - Added a dependency-light `@isonia/theme-default/chakra` adapter export for Chakra-compatible token configuration.
 - Added local documentation for the stable theme contract and package exports.
+- Added default Roboto and SUSE Mono font imports, 300/500 normal and italic font loading, and font weight/line-height/letter-spacing CSS variables.
 
 ### Changed
 
 - Aligned default CSS variables with the current App Core theme values while keeping feature-specific behavior out of the package.
+- Switched the default typography contract from IBM Plex stacks to Roboto for sans/heading slots and SUSE Mono for monospace slots.
 - Updated local workspace guidance to prefer private root pnpm workspace resolution over ad hoc package links.
 - Updated the README public docs link to the current single developer overview.
 
